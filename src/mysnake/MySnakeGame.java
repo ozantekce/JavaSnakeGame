@@ -2,16 +2,14 @@ package mysnake;
 import java.awt.Canvas;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.Color;
 import java.awt.Dimension;
-import java.awt.event.KeyListener;
 import java.awt.image.BufferStrategy;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 
 
-public class MySnake extends Canvas implements Runnable{
+public class MySnakeGame extends Canvas implements Runnable{
     
     
     /*
@@ -25,7 +23,7 @@ public class MySnake extends Canvas implements Runnable{
     
     private static boolean running = false;
 
-    public MySnake() {
+    public MySnakeGame() {
         
         
         this.setPreferredSize(new Dimension(Constants.width*Constants.pixW,Constants.height*Constants.pixH));
@@ -53,7 +51,7 @@ public class MySnake extends Canvas implements Runnable{
     
     public static void main(String[] args) {
         
-        MySnake canvas = new MySnake();
+        MySnakeGame canvas = new MySnakeGame();
         
         
         Snake snake = new Snake();
@@ -91,9 +89,9 @@ public class MySnake extends Canvas implements Runnable{
             for (int j = 0; j < Constants.height; j++) {
                 
                 
-                if(map.getSpot(i, j).cChange){
+                if(map.getSpot(i, j).spotValueChanged){
                     map.getSpot(i, j).render(g);
-                    map.getSpot(i, j).cChange = false;
+                    map.getSpot(i, j).spotValueChanged = false;
                 }
                 
             }
@@ -130,7 +128,7 @@ public class MySnake extends Canvas implements Runnable{
             try {
                 Thread.sleep(100);
             } catch (InterruptedException ex) {
-                Logger.getLogger(MySnake.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(MySnakeGame.class.getName()).log(Level.SEVERE, null, ex);
             }
             
             if(running){

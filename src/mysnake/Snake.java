@@ -1,7 +1,5 @@
 package mysnake;
 
-import java.util.ArrayList;
-
 
 public class Snake {
     
@@ -18,7 +16,7 @@ public class Snake {
     public static boolean goingDown = false;
     
     public Snake() {
-        MySnake.map.change(x, y, 1);
+        MySnakeGame.map.changeMapValue(x, y, 1);
     }
     
     
@@ -45,7 +43,7 @@ public class Snake {
             return;
         }
         
-        if(MySnake.map.getSpot(x-1, y).getC()==2){
+        if(MySnakeGame.map.getSpot(x-1, y).getC()==2){
             Map.gameover = true;
             return;
         }
@@ -54,9 +52,9 @@ public class Snake {
             eatFood();
         }else
             tail.move(x, y);
-        MySnake.map.change(x, y, 0);
+        MySnakeGame.map.changeMapValue(x, y, 0);
         x--;
-        MySnake.map.change(x, y, 1);
+        MySnakeGame.map.changeMapValue(x, y, 1);
         tail.sendMap();
     }
     public static void goRight(){
@@ -66,7 +64,7 @@ public class Snake {
             return;
         }
         
-        if(MySnake.map.getSpot(x+1, y).getC()==2){
+        if(MySnakeGame.map.getSpot(x+1, y).getC()==2){
             Map.gameover = true;
             return;
         }
@@ -75,9 +73,9 @@ public class Snake {
             eatFood();
         }else
             tail.move(x, y);
-        MySnake.map.change(x, y, 0);
+        MySnakeGame.map.changeMapValue(x, y, 0);
         x++;
-        MySnake.map.change(x, y, 1);
+        MySnakeGame.map.changeMapValue(x, y, 1);
         tail.sendMap();
     }
     public static void goDown(){
@@ -87,7 +85,7 @@ public class Snake {
             return;
         }
         
-        if(MySnake.map.getSpot(x, y+1).getC()==2){
+        if(MySnakeGame.map.getSpot(x, y+1).getC()==2){
             Map.gameover = true;
             return;
         }
@@ -96,9 +94,9 @@ public class Snake {
             eatFood();
         }else
             tail.move(x, y);
-        MySnake.map.change(x, y, 0);
+        MySnakeGame.map.changeMapValue(x, y, 0);
         y++;
-        MySnake.map.change(x, y, 1);
+        MySnakeGame.map.changeMapValue(x, y, 1);
         tail.sendMap();
     }
     public static void goUp(){
@@ -108,7 +106,7 @@ public class Snake {
             return;
         }
         
-        if(MySnake.map.getSpot(x, y-1).getC()==2){
+        if(MySnakeGame.map.getSpot(x, y-1).getC()==2){
             Map.gameover = true;
             return;
         }
@@ -118,9 +116,9 @@ public class Snake {
         }else
             tail.move(x, y);
         
-        MySnake.map.change(x, y, 0);
+        MySnakeGame.map.changeMapValue(x, y, 0);
         y--;
-        MySnake.map.change(x, y, 1);
+        MySnakeGame.map.changeMapValue(x, y, 1);
         
         tail.sendMap();
         
@@ -219,10 +217,10 @@ public class Snake {
             if(tailSize==0)
                 return;
             if(!foodFlag){
-                MySnake.map.change(removeX, removeY, 0);
-                MySnake.map.change(head.x, head.y, 2);
+                MySnakeGame.map.changeMapValue(removeX, removeY, 0);
+                MySnakeGame.map.changeMapValue(head.x, head.y, 2);
             }else{
-                MySnake.map.change(head.x, head.y, 2);
+                MySnakeGame.map.changeMapValue(head.x, head.y, 2);
             }
             foodFlag = false;
         }

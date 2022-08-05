@@ -6,7 +6,7 @@ public class Spot {
     
     private int x;
     private int y;
-    private int c;
+    private int value;
 
     public Spot(int x, int y) {
         this.x = x;
@@ -14,35 +14,35 @@ public class Spot {
     }
     
     //Flags
-    public boolean cChange = true;
+    public boolean spotValueChanged = true;
     
-    public void changeC(int c){
+    public void changeSpotValue(int c){
         System.out.println(c);
-        if(this.c!=c){
-            this.c = c;
-            cChange = true;
+        if(this.value !=c){
+            this.value = c;
+            spotValueChanged = true;
         }
         
     }
 
     public int getC() {
-        return c;
+        return value;
     }
     
     
     
     public void render(Graphics g) {
         
-        if(c==0){
+        if(value ==0){
             g.setColor(Color.WHITE);
             g.fillRect(x*Constants.pixW, y*Constants.pixH, Constants.pixW, Constants.pixH);
-        }else if(c==1){
+        }else if(value ==1){
             g.setColor(Color.BLUE);
             g.fillRect(x*Constants.pixW, y*Constants.pixH, Constants.pixW, Constants.pixH);
-        }else if(c==2){
+        }else if(value ==2){
             g.setColor(Color.BLUE);
             g.fillRect(x*Constants.pixW, y*Constants.pixH, Constants.pixW, Constants.pixH);
-        }else if(c==3){
+        }else if(value ==3){
             g.setColor(Color.GREEN);
             g.fillRect(x*Constants.pixW, y*Constants.pixH, Constants.pixW, Constants.pixH);
         }

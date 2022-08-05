@@ -16,9 +16,8 @@ public class Map {
             for (int j = 0; j < Constants.height; j++) {
                 
                 map [i][j] = new Spot(i, j);
-                
             }
-            
+
         }
         
         
@@ -47,9 +46,9 @@ public class Map {
         
     }
     
-    public static void change(int x,int y, int c){
+    public static void changeMapValue(int x, int y, int value){
         
-        map[x][y].changeC(c);
+        map[x][y].changeSpotValue(value);
         
     }
     

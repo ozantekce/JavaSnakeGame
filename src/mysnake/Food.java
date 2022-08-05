@@ -42,8 +42,8 @@ public class Food {
             rx = (int) (Math.random()*Constants.width);
             ry = (int) (Math.random()*Constants.height);
             
-            if(MySnake.map.getSpot(rx, ry).getC()==0){
-                MySnake.map.getSpot(rx, ry);
+            if(MySnakeGame.map.getSpot(rx, ry).getC()==0){
+                MySnakeGame.map.getSpot(rx, ry);
                 break;
             }
             
@@ -54,7 +54,7 @@ public class Food {
         x=rx;
         y=ry;
         
-        MySnake.map.change(rx, ry, 3);
+        MySnakeGame.map.changeMapValue(rx, ry, 3);
         
     }
     
