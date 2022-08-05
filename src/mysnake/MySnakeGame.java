@@ -126,7 +126,7 @@ public class MySnakeGame extends Canvas implements Runnable{
             }
             
             try {
-                Thread.sleep(100);
+                Thread.sleep(120);
             } catch (InterruptedException ex) {
                 Logger.getLogger(MySnakeGame.class.getName()).log(Level.SEVERE, null, ex);
             }

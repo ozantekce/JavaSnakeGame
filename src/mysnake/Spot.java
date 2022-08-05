@@ -17,7 +17,7 @@ public class Spot {
     public boolean spotValueChanged = true;
     
     public void changeSpotValue(int c){
-        System.out.println(c);
+        //System.out.println(c);
         if(this.value !=c){
             this.value = c;
             spotValueChanged = true;
